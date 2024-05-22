@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>이름</th>
+        <th>나이</th>
+    </tr>
+    <!-- 배열 받기
+        "변수명:${배열값}"-->
+    <tr th:each="person:${persons}">
+        <td th:text="${person.getName()}"></td>
+        <td th:text="${person.getAge()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
