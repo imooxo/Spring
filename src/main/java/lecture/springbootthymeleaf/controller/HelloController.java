@@ -1,5 +1,7 @@
 package lecture.springbootthymeleaf.controller;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,14 +34,15 @@ public class HelloController {
     // 실습(1)
     @GetMapping("/prac1")
     public String prac01(Model model) {
-        model.addAttribute("age", 23);
+        model.addAttribute("age", 9);
         return "prac1";
     }
 
     // 실습(2)
-    @GetMapping("/prac2")
+    @GetMapping("/people")
     public String prac02(Model model) {
         List<Person> persons = new ArrayList<>();
+        //ArrayList<Person> person = new ArrayList<Person>();
         persons.add(new Person("kim", 10));
         persons.add(new Person("lee", 20));
         persons.add(new Person("hong", 30));
@@ -58,6 +61,8 @@ public class HelloController {
         }
     }//Hello class
 
+    @AllArgsConstructor
+    @Getter
     class Person {
         private String name;
         private int age;
@@ -66,21 +71,20 @@ public class HelloController {
             this.name = name;
             this.age = age;
         }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public int getAge() {
-            return age;
-        }
-
-        public void setAge(int age) {
-            this.age = age;
-        }
+//        public String getName() {
+//            return name;
+//        }
+//
+//        public void setName(String name) {
+//            this.name = name;
+//        }
+//
+//        public int getAge() {
+//            return age;
+//        }
+//
+//        public void setAge(int age) {
+//            this.age = age;
+//        }
     }//Person class
 }//class
