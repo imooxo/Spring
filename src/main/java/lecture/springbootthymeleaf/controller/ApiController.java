@@ -3,6 +3,7 @@ package lecture.springbootthymeleaf.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -38,9 +39,14 @@ public class ApiController {
 
 
     // GET localhost:8080/api/res2/{name}/{age}
-//    @GetMapping("/res2/")
-//    public String getRes2() {
-//        return "";
-//    }
+    @GetMapping({"/res2/{name}", "/res2/{name}/{param2}"})
+    public String getRes2(
+            @PathVariable String name,
+            @PathVariable(value = "param2", required = false) Integer age,
+            Model model) {
+        model.addAttribute("name", name);
+        model.addAttribute("age", age);
+        return "res";
+    }
 
 }//class
