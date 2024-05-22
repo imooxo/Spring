@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<h3>GET 전송</h3>
 <form action="/api/res1" method="get">
     이름: <input type="text" name="name"/> <br/>
     나이: <input type="number" name="age"/>
@@ -15,6 +16,13 @@
 </form>
 <a href="/api/res2/jade">/api/res2/jade</a>
 <a href="/api/res2/jade/88">/api/res2/jade/88</a>
+<br/>
 
+<h3>POST 전송</h3>
+<form action="/api/res3" method="post">
+    이름: <input type="text" name="name"/> <br/>
+    나이: <input type="number" name="age"/>
+    <button type="submit">전송</button>
+</form>
 </body>
 </html>
