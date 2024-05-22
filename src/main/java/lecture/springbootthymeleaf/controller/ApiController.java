@@ -81,5 +81,4 @@ public class ApiController {
     public String getRes4() {
         return "hello";
     }
-
 }//class
